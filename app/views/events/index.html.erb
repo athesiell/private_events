@@ -1,4 +1,4 @@
-<h1>Upcoming events:</h1>
+<h1>All events:</h1>
 <% @events.each do |event| %>
   <ul>
     <li>
@@ -6,7 +6,27 @@
     </li>
   </ul>
 <% end %>
+
 <br>
+<h1>Old events:</h1>
+<% @past_events.each do |event| %>
+  <ul>
+    <li>
+      <%= link_to event.title, event %>
+    </li>
+  </ul>
+<%end%>
+<br>
+
+<h1>Upcoming Events!:</h1>
+<% @future_events.each do |event| %>
+  <ul>
+    <li>
+      <%= link_to event.title, event %>
+    </li>
+  </ul>
+<% end %>
+
 <%= link_to "Create new event", new_event_path %>
 <br>
-<%= button_to "Log out", destroy_user_session_path, method: :delete %>
+<%= button_to "Log out", destroy_user_session_path, method: :delete %> 

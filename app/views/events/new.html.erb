@@ -3,6 +3,8 @@
 <%= form_with model: @event do |form| %>
   <%= form.label :title, "Name of your event" %><br>
   <%= form.text_field :title%><br><br>
+  <%= form.label :date, "When event will take place?"%><br>
+  <%= form.date_field :date %><br><br>
   <%= form.text_area :body, size: "50x10", placeholder: "What is your event about?" %><br><br>
   <%= form.submit%>
 <% end %>
