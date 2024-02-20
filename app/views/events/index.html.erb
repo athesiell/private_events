@@ -1,0 +1,12 @@
+<h1>Upcoming events:</h1>
+<% @events.each do |event| %>
+  <ul>
+    <li>
+      <%= link_to event.title, event %>
+    </li>
+  </ul>
+<% end %>
+<br>
+<%= link_to "Create new event", new_event_path %>
+<br>
+<%= button_to "Log out", destroy_user_session_path, method: :delete %>

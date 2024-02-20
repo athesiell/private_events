@@ -1,2 +1,16 @@
 <h1><%= @event.title %></h1>
 <p><%= @event.body %></p>
+<h3>Attendees</h3>
+<% if @attendees.any? %>
+  <ul>
+    <% @attendees.each do |attendee| %>
+      <li><%= attendee.username %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No attendees yet.</p>
+<% end %>
+<br>
+<%= link_to 'Home Page', root_path %>
+<br>
+<%= link_to 'Create New EVENT', new_event_path %>
